@@ -19,7 +19,7 @@
     <p><br></p>
     <p><span>User ID : </span><input type="text" id="uid"></p>
     <p><button onclick="req();">Run</button></p>
-    <p><a target="_blank" rel="noopener noreferrer" href="https://https://coupon.netmarble.com/sk2gb">How to find User ID (UID)</a></p>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://forum.netmarble.com/sk2_en/view/12/6247">How to find User ID (UID)</a></p>
     <hr>
     <p><span>Saving Member Information Cookies !</span></p>
     <p><br></p>
@@ -126,11 +126,11 @@
                 let i = a
                 $.ajax({
                     type: 'POST',
-                    url: 'https://coupon.netmarble.com/api/coupon/reward',
+                    url: 'https://coupon.netmarble.com/api/coupon/',
                     data: {
                         'pid': uid,
-                        'channelCode': 400,
-                        'coupon-code': tabledata[i]['code'],
+                        'channelCode': 100,
+                        'couponCode': tabledata[i]['code'],
                         'worldId': '',
                         'nickname': ''
                     },
@@ -157,7 +157,7 @@
         }
         
         google.charts.load('current', { packages: ['corechart'] }).then(function () {
-            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/10j3fi-Agxlv8fMp1ye0Y7KAHNnKt6M0Hu_CCQT1AapE/gviz/tq?tqx=out:html&tq=SELECT+B&gid=2000340401');
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Nmlz2XXnaJBAQmFIXIHCy2jOcHpAhLbCA0a4Ne8xqjA/gviz/tq?tqx=out:html&tq=SELECT+B&gid=2000340401');
             query.send(function (response) {
                 var dataTable = response.getDataTable();
                 var jsonData = dataTable.toJSON();
