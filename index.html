@@ -128,11 +128,13 @@
                     type: 'POST',
                     url: 'https://coupon.netmarble.com/api/coupon/',
                     data: {
-                        'pid': uid,
-                        'channelCode': 200,
+                        'gameCode' : sk2gb,
                         'couponCode': tabledata[i]['code'],
-                        'worldId': '',
-                        'nickname': ''
+                        'langCd' : EN_US,
+                        'pid': uid,
+                        //'channelCode': 200,
+                        //'worldId': '',
+                        //'nickname': ''
                     },
                     success: function (data) {
                         if (data['resultCode'] === 'SUCCESS') {
