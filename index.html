@@ -137,21 +137,21 @@
                         //'nickname': ''
                     },
                     success: function (data) {
-                        if (data['resultCode'] === 'SUCCESS') {
+                        if (data['errorMessage'] === 'SUCCESS') {
                             tabledata[i]['result'] = 1
                             tabledata[i]['description'] = data['rewardItem']['rewardTitle']
-                        } else if (data['resultCode'] === 'NOT_EXISTS_PID') {
+                        } else if (data['errorMessage'] === 'NOT_EXISTS_PID') {
                             tabledata[i]['description'] = 'NOT EXISTS UID'
-                        } else if (data['resultCode'] === 'COUPON_ALREADY_USE') {
+                        } else if (data['errorMessage'] === 'COUPON_ALREADY_USE') {
                             tabledata[i]['description'] = 'COUPON ALREADY USE'
-                        } else if (data['resultCode'] === 'COUPON_WRONG') {
+                        } else if (data['errorMessage'] === 'COUPON_WRONG') {
                             tabledata[i]['description'] = 'COUPON WRONG'
-        			} else if (data['resultCode'] === 'COUPON_RESTRICT') {
+        			} else if (data['errorMessage'] === 'COUPON_RESTRICT') {
                             tabledata[i]['description'] = 'COUPON RESTRICT. COUPON ENTRIES FAILED SUCCESSIVELY. CAN BE ENTERED AFTER 1 HOUR.'
                         } else {
                             tabledata[i]['description'] = 'UNKNOWN RESPONSE'
                         }
-                        tabledata[i]['response'] = data['resultCode']
+                        tabledata[i]['response'] = data['errorMessage']
                         table.updateData(tabledata)
                     }
                 })
